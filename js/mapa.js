@@ -28,13 +28,13 @@ $(document).ready(function () {
             var basemap = e.target.value;
             setBasemap(basemap);
         });
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    }).addTo(map);
+    L.control.scale().addTo(map);
     let latitud = -1.9921275;
     let longitud = 43.3228796;
     for (i = 0; i < 3; i++) {
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-        }).addTo(map);
-        L.control.scale().addTo(map);
         L.marker([longitud, latitud], {
             draggable: true
         }).addTo(map);
